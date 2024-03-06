@@ -16,7 +16,7 @@ while crime not in list_of_crimes:
     print("That didn't happen...")
     crime = input(f"WHat happened {list_of_crimes}?\n\t")
 
-print("I guess you've already heard the bad news, get down to the crime scene and investigate..")
+print("I guess you've already heard the bad news, get down to the crime house and investigate..")
 yes = input("Go now? (y/n) ").lower()
 if yes == 'n':
     print("Too bad, you're going")
