@@ -2,7 +2,7 @@
 # Gavin Mckenzie
 # 3/6/24
 # Starter code
-from colorama import Fore, Back, Style
+from colorama import Fore, Style
 import Ascii_artr
 
 print(f"{Ascii_artr.TITLE_CARED}")
