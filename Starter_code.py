@@ -4,8 +4,10 @@
 # Starter code
 from colorama import Fore, Style
 import Ascii_artr
+from playsound import playsound
 
 print(f"{Ascii_artr.TITLE_CARED}")
+playsound('whistle.mp3')
 player = input("Enter your name: ")
 print(Ascii_artr.CONNER)
 print(f"Welcome detective {player}, Let's cut to the {Fore.RED}{Style.BRIGHT}CHASE{Style.RESET_ALL}")
@@ -23,3 +25,10 @@ print("I guess you've already heard the bad news, get down to the crime scene an
 yes = input("Go now? (y/n) ").lower().strip()
 if yes == 'n':
     print("Didn't ask")
+
+if crime == "the murder?":
+    pass
+elif crime == "the robbery?":
+    pass
+elif crime == "the drug house?":
+    pass
