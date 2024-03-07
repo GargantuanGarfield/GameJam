@@ -2,7 +2,7 @@
 # 3/7/2024
 # The main floor where you search for items.
 inventory = []
-selection = ['Basement', 'Upstairs', 'Cabinet', 'Kitchen' ]
+selection = ['Basement', 'Upstairs', 'Cabinet', 'Kitchen', 'Check' ]
 cabinet_selection = ['[P]owder???', '[B]loody Knife', '[W]hetstone']
 HasKey = False
 import time
@@ -19,9 +19,9 @@ print(background.__doc__)
 passnum1 = random.randint(0,9)
 
 
-def setting(player):
+def setting():
     global HasKey
-    option = input(f'{player}, Choose what you want to do {selection}: ').capitalize()
+    option = input(f'Choose what you want to do {selection}: ').capitalize()
     while option not in selection:
         option = input(f'Choose what you want to do {selection}: ').capitalize()
     while not HasKey:
@@ -62,6 +62,12 @@ def setting(player):
                 print("Can't do that in the cabinet!")
         elif option == 'Kitchen':
             HasKey = True
+        elif option == 'Check':
+            print('You have: ', end=' ')
+            for i in inventory:
+                print(i)
+            print('in your inventory.')
+            option = input(f'Choose what you want to do {selection}: ').capitalize()
         else:
             print('Not a valid option!')
             option = input(f'Choose what you want to do {selection}: ').capitalize()

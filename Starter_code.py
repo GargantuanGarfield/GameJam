@@ -29,6 +29,6 @@ def main():
     for line in Ascii_artr.DOTS:
         print(line)
         sleep(.8)
-    MainFloor.setting(player)
+    MainFloor.setting()
 
 main()
