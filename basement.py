@@ -75,6 +75,8 @@ def basement(inventory):
                 print("You don't find anything of note..")
                 sleep(1.8)
                 print("Back to searching")
+                ITEMS[0].remove(item)
+
 
             elif item == "Table":
                 for line in Ascii_artr.TABLE.splitlines():
@@ -93,6 +95,7 @@ def basement(inventory):
                 print("You put it in your pocket")
                 system('cls')
                 inventory.append('Battery')
+                ITEMS[0].remove(item)
 
             elif item == 'Inventory':
                 print("You check your pockets")
@@ -123,6 +126,7 @@ def basement(inventory):
                 print("You've acquired 'Strange Painting'")
                 system('cls')
                 inventory.append('Strange Painting')
+                ITEMS[0].remove(item)
 
 
 
@@ -158,6 +162,7 @@ def basement(inventory):
                     print(line)
                     sleep(.086)
                 inventory.append(item)
+                ITEMS[1].remove(item)
 
             elif item == "Pallets":
                 print()
@@ -165,13 +170,15 @@ def basement(inventory):
                     print(line)
                     sleep(.086)
                 inventory.append(item)
+                ITEMS[1].remove(item)
 
-            elif item == "Pallets":
+            elif item == "Paletts":
                 print()
                 for line in Ascii_artr.art.splitlines():
                     print(line)
                     sleep(.086)
                 inventory.append(item)
+                ITEMS[1].remove(item)
 
             elif item == 'Inventory':
                 print("You check your pockets")
@@ -215,6 +222,7 @@ def basement(inventory):
                     print(line)
                     sleep(.086)
                 inventory.append(item)
+                ITEMS[2].remove(item)
 
             elif item == "Pallets":
                 print()
@@ -222,6 +230,7 @@ def basement(inventory):
                     print(line)
                     sleep(.086)
                 inventory.append(item)
+                ITEMS[2].remove(item)
 
             elif item == "Pallets":
                 print()
@@ -229,6 +238,7 @@ def basement(inventory):
                     print(line)
                     sleep(.086)
                 inventory.append(item)
+                ITEMS[2].remove(item)
 
             elif item == 'Inventory':
                 print("You check your pockets")
@@ -244,7 +254,10 @@ def basement(inventory):
             system('cls')
             print("You check your pockets")
             for thing in inventory:
-                if thing == 'Strange Painting':
+                if len(inventory) == 0:
+                    print("Nothing is there")
+                    sleep(1.2)
+                elif thing == 'Strange Painting':
                     print(' - ' + thing + ' [VERY IMPORTANT]')
                     sleep(.7)
                 elif thing == ("Battery" or "Key" or "Tape Recorder"):
@@ -271,5 +284,4 @@ def basement(inventory):
 
     sleep(1.5)
     return inventory
-    #MainFloor.mainfloor()
 

@@ -12,7 +12,7 @@ import basement
 import success_failure
 
 def main():
-    INVENTORY = ['nothing', 'i swear its nothing']
+    inventory = []
     print(f"{Ascii_artr.TITLE_CARED}")
     player = input("Enter your last name: ")
     for line in Ascii_artr.CONNER.splitlines():
@@ -34,7 +34,7 @@ Now is not the time for jokes..\n\tWe found where the killer has been hiding out
         print(line, end="")
         sleep(.8)
     print()
-    basement.basement(INVENTORY)
+    inventory = basement.basement(inventory)
     #MainFloor.system()
 
 
