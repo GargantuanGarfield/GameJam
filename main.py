@@ -12,7 +12,7 @@ import basement
 import success_failure
 
 def main():
-    INVENTORY = []
+    INVENTORY = ['nothing', 'i swear its nothing']
     print(f"{Ascii_artr.TITLE_CARED}")
     player = input("Enter your last name: ")
     for line in Ascii_artr.CONNER.splitlines():
