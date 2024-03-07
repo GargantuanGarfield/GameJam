@@ -5,7 +5,7 @@
 #
 
 #import basement
-#import MainFloor
+import MainFloor
 import random
 import sys
 import time
@@ -20,7 +20,7 @@ def main(HasKeyToBasement, inventory):
     if do_input == "go back downstairs":
         print("Going back downstairs...")
         # Call main function from middle floor
-        #MainFloor.setting(player)
+        MainFloor.setting()
     while do_input == "look around":
         room_input = input(f"What room do you want to enter? {selections}: ")
         if room_input == "B":
@@ -54,12 +54,22 @@ def main(HasKeyToBasement, inventory):
                         sys.stdout.write(i)
                         sys.stdout.flush()
                         time.sleep(0.1)
+                elif rps_input == computer_choice:
+                    for i in f"I choose {computer_choice}. Tie, try again":
+                        sys.stdout.write(i)
+                        sys.stdout.flush()
+                        time.sleep(0.1)
                 else:
                     for i in f"I chose {computer_choice}. Congrats, you win! Look at the bookshelf...":
                         sys.stdout.write(i)
                         sys.stdout.flush()
                         time.sleep(0.1)
                     print()
+                    print("You find a secret elevator behind the bookshelf!")
+            elif office_input == "D":
+                pass
+            elif office_input == "B":
+                print("Try checking the computer...")
 
 
 
@@ -68,7 +78,7 @@ def main(HasKeyToBasement, inventory):
 
         elif room_input == "D":
             print("Going back downstairs...")
-            # MainFloor.setting(player)
+            MainFloor.setting()
     return HasKeyToBasement, inventory
 
 
