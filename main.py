@@ -9,9 +9,10 @@ from time import sleep
 import basement
 # import MainFloor
 # import top_floor
-#import success_failure
+import success_failure
 
 def main():
+    INVENTORY = []
     print(f"{Ascii_artr.TITLE_CARED}")
     player = input("Enter your last name: ")
     for line in Ascii_artr.CONNER.splitlines():
@@ -21,18 +22,20 @@ def main():
     print(f"\tDetective... We have a problem--")
     input(f"What happened? \n\t").lower()
     print(f"\n{Style.BRIGHT}What are you talking about? No there's been a string of murders!{Style.RESET_ALL}\
-    Now is not the time for jokes..\n\tWe found where the killer has been hiding out, so go investigate.")
+Now is not the time for jokes..\n\tWe found where the killer has been hiding out, so go investigate.")
     print()
     yes = input("Go now?\n\t(y/n): ").lower().strip()
     while yes != 'y':
         print("Try again")
-        yes = input("Go now?]\n\t(y/n): ").lower().strip()
+        yes = input("Go now?\n\t(y/n): ").lower().strip()
     print("Wonderful\n")
     system("cls")
     for line in Ascii_artr.DOTS:
         print(line, end="")
         sleep(.8)
     print()
+    basement.basement(INVENTORY)
+    #MainFloor.system()
 
 
 main()

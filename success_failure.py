@@ -43,4 +43,3 @@ def success_fail():
             return True
 
 
-success_fail()
