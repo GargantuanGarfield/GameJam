@@ -18,10 +18,10 @@ def main():
     for line in Ascii_artr.CONNER.splitlines():
         print(line)
         sleep(.086)
-    print(f"Welcome detective {player}, Let's cut to the {Fore.RED}{Style.BRIGHT}CHASE{Style.RESET_ALL}")
-    print(f"\tDetective... We have a problem--")
+    print(f" - Welcome detective {player}, Let's cut to the {Fore.RED}{Style.BRIGHT}CHASE{Style.RESET_ALL}")
+    print(f"\t - Detective... We have a problem--")
     input(f"What happened? \n\t").lower()
-    print(f"\n{Style.BRIGHT}What are you talking about? No there's been a string of murders!{Style.RESET_ALL}\
+    print(f"\n{Style.BRIGHT} - What are you talking about? No there's been a string of murders!{Style.RESET_ALL}\
 Now is not the time for jokes..\n\tWe found where the killer has been hiding out, so go investigate.")
     print()
     yes = input("Go now?\n\t(y/n): ").lower().strip()
