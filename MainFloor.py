@@ -29,9 +29,14 @@ def setting(inventory):
     global HasKey
     option = input(f'Choose what you want to do {selection}: ').capitalize()
     if 'Working Tape Recorder' in inventory:
-        print('Great job'), print('.', end=''), time.sleep(1), print('.', end=''), time.sleep(1), print('.'), time.sleep(1)
-        print('You can go home now...')
-        quit()
+        if 'Wheat' in inventory and 'Powdered Sugar' in inventory and 'Egg' in inventory and 'Milk' in inventory:
+            print('Great job'), print('.', end=''), time.sleep(1), print('.', end=''), time.sleep(1), print('.'), time.sleep(1)
+            print('You go home and make a sweet cake with all of your ingredients.')
+            quit()
+        else:
+            print('Great job'), print('.', end=''), time.sleep(1), print('.', end=''), time.sleep(1), print('.'), time.sleep(1)
+            print('You can go home now...')
+            quit()
     else:
         pass
     while option not in selection:
