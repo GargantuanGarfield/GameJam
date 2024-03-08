@@ -39,7 +39,6 @@ def success_fail():
             print('SUCCESS!!!')
             sleep(1.2)
             print("The door opens")
-
             return True
 
 

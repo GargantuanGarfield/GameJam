@@ -6,16 +6,18 @@
 from time import sleep
 from os import system
 import Ascii_artr
+import MainFloor
 
 ROOMS = ["Main Floor", "Art Studio", "Workshop", "Closet", "Center", 'Inventory']
 ITEMS = [['Canvas', 'Palettes', 'Table', 'Inventory', 'Leave'], ['Bloody Counter', 'Pegboard', 'Saw Table', 'Inventory',
-         'Leave'], ['Top shelf', 'strange bag', 'Inventory', 'Leave']]
+         'Leave'], ['Top shelf', 'Strange bag', 'Inventory', 'Leave']]
 
 
 def basement(inventory):
     move = ''
     current_room = 'Center'
     item = ''
+    story = 0
     while move.strip() != ("M" or "MAIN FLOOR" or "MAIN"):
 
         # Checks for all appropriate key items
@@ -23,7 +25,7 @@ def basement(inventory):
             print("Oh?", end="")
             sleep(.8)
             print("Looks like you have enough batteries for the tape recorder..")
-            sleep(1.2)
+            sleep(1.7)
             print("You have acquired 'Working Tape Recorder'")
             inventory.remove('Red AA Battery')
             inventory.remove('Blue AA Battery')
@@ -33,7 +35,7 @@ def basement(inventory):
         elif current_room == 'Center':
             #Move's you out of the room
             print("Nothing to investigate")
-            sleep(1.2)
+            sleep(1.7)
             rooms = [x for x in ROOMS if current_room != x]
             print(f"Where would you like to go?")
             for room in rooms:
@@ -79,7 +81,7 @@ def basement(inventory):
                 sleep(1.5)
             elif item == "Palettes":
                 print("You check the art Palettes...")
-                sleep(1.2)
+                sleep(1.7)
                 for line in Ascii_artr.PALLET.splitlines():
                     print(line)
                     sleep(.086)
@@ -100,7 +102,7 @@ def basement(inventory):
                     sleep(.25)
                 print("\n\tWAIT")
                 print("Theres something underneath it")
-                sleep(1.2)
+                sleep(1.7)
                 print("You found a battery!")
                 sleep(1.6)
                 print("You put it in your pocket")
@@ -115,7 +117,7 @@ def basement(inventory):
                     if len(inventory) == 0:
                         sleep(2)
                         print("Nothing is there")
-                        sleep(1.2)
+                        sleep(1.7)
                     elif thing == 'Strange Painting':
                         print(' - ' + thing + ' [VERY IMPORTANT]')
                     elif thing == ("Blue AA Battery" or "Red AA Battery" or "Key" or "Tape Recorder"):
@@ -130,15 +132,15 @@ def basement(inventory):
                     print(line)
                     sleep(.086)
                 print("What is this??")
-                sleep(1.2)
+                sleep(1.7)
                 print("You look closer")
-                sleep(1.2)
+                sleep(1.7)
                 print("It's painted with blood..")
                 for line in Ascii_artr.DOTS:
                     print(line, end="\t")
                     sleep(.25)
                 print("\nYou decide to hold onto it.")
-                sleep(1.2)
+                sleep(1.7)
                 print("You've acquired 'Strange Painting'")
                 system('cls')
                 inventory.append('Strange Painting')
@@ -147,9 +149,8 @@ def basement(inventory):
 
 
         # Current Room Work
-        elif current_room == 'Workshop':
+        elif current_room == "Workshop":
             item = ''
-            story = 0
 
             #Story lines
             while story < 1:
@@ -164,7 +165,7 @@ def basement(inventory):
                 print("\nYou throw up in the corner")
                 sleep(2)
                 print("Well, back to work")
-                sleep(1.2)
+                sleep(1.7)
                 story += 1
 
             # Input for items
@@ -197,37 +198,37 @@ def basement(inventory):
                     print(line)
                     sleep(.086)
                 print("You examine the table..")
-                sleep(1.2)
+                sleep(1.7)
                 print("The blood seems to be a solution made from many people", end="")
                 for i in range(2):
                     print(" . ", end="")
                     sleep(.86)
                 print("\nNot worth collecting")
-                sleep(1.2)
+                sleep(1.7)
                 print("You start to feel sick again")
-                sleep(1.2)
+                sleep(1.7)
                 print("Let's keep looking")
-                sleep(1.2)
+                sleep(1.7)
                 ITEMS[1].remove(item)
 
             elif item == "Pegboard":
                 print("Looks like it's got the tools the killer used.")
                 sleep(.8)
-                for line in Ascii_artr.BOARD.splitlines():
+                for line in Ascii_artr.MCCUEN.splitlines():
                     print(line)
                     sleep(.086)
                 print("Most of the items are wiped clean")
                 sleep(.8)
                 print("looks like theres a knife on the floor that was skipped")
-                sleep(1.2)
+                sleep(1.7)
                 print("Must not be loved..")
                 sleep(.8)
                 print("Or loved a bit too much")
-                sleep(1.2)
+                sleep(1.7)
                 print("Probably good evidence")
-                sleep(1.2)
+                sleep(1.7)
                 print("You've acquired the 'Bloody Knife'")
-                sleep(1.2)
+                sleep(1.7)
                 print("These weapons are making me uneasy")
                 sleep(.9)
                 inventory.append('Bloody Knife')
@@ -240,7 +241,7 @@ def basement(inventory):
                     print(line)
                     sleep(.086)
                 print("The blade is rusted and red")
-                sleep(1.2)
+                sleep(1.7)
                 print("looks like theres something beside it though..")
                 sleep(1.8)
                 print("You've acquired a 'Blue AA Battery'")
@@ -253,7 +254,7 @@ def basement(inventory):
                     if len(inventory) == 0:
                         sleep(2)
                         print("Nothing is there")
-                        sleep(1.2)
+                        sleep(1.7)
                     elif thing == 'Strange Painting':
                         print(' - ' + thing + ' [VERY IMPORTANT]')
                     elif thing == ("Blue AA Battery" or "Red AA Battery" or "Key" or "Tape Recorder"):
@@ -264,6 +265,7 @@ def basement(inventory):
         # Current Room Closet
         elif current_room == 'Closet':
             item = ''
+
             # Input for items
             print("\nWhat would you like to investigate?\n\t(enter 'L' to leave)")
             for i in ITEMS[2]:
@@ -287,20 +289,42 @@ def basement(inventory):
                 print("Leaving..")
                 sleep(1.5)
 
-            elif item == "Top Shelf":
-                print()
-                for line in Ascii_artr.art.splitlines():
+            elif item == "Top shelf":
+                for line in Ascii_artr.SHELF.splitlines():
                     print(line)
                     sleep(.086)
-                inventory.append(item)
+                print("You reach up to the top shelf of the cabinet...")
+                sleep(2)
+                print("You can't reach")
+                for i in Ascii_artr.DOTS:
+                    print(i, end="")
+                    sleep(1.4)
+                print("\nYou step away in shame")
                 ITEMS[2].remove(item)
 
-            elif item == "Strange Bag":
-                print()
-                for line in Ascii_artr.art.splitlines():
+            elif item == "Strange bag":
+                print("You pull out the bag from the closet..")
+                sleep(1.7)
+                print("The bag is too heavy to be anything normal")
+                for line in Ascii_artr.BAG.splitlines():
                     print(line)
                     sleep(.086)
-                inventory.append(item)
+                sleep(2)
+                print("I don't even want to know")
+                sleep(1.5)
+                print("The bag falls and rips, and a severed foot falls out...")
+                sleep(2)
+                print(". . . . .")
+                sleep(4)
+                print("I guess I need to take this..")
+                sleep(1.3)
+                print("So disgusting")
+                print("You have acquired 'Severed Foot'!")
+                sleep(2)
+                print("You throw up again")
+                sleep(2)
+                print("There goes my lunch.")
+                inventory.append('Severed Foot')
                 ITEMS[2].remove(item)
 
             elif item == 'Inventory':
@@ -309,7 +333,7 @@ def basement(inventory):
                     if len(inventory) == 0:
                         sleep(2)
                         print("Nothing is there")
-                        sleep(1.2)
+                        sleep(1.7)
                     elif thing == 'Strange Painting':
                         print(' - ' + thing + ' [VERY IMPORTANT]')
                     elif thing == ("Blue AA Battery" or "Red AA Battery" or "Key" or "Tape Recorder"):
@@ -324,7 +348,7 @@ def basement(inventory):
                 if len(inventory) == 0:
                     sleep(2)
                     print("Nothing is there")
-                    sleep(1.2)
+                    sleep(1.7)
                 elif thing == 'Strange Painting':
                     print(' - ' + thing + ' [VERY IMPORTANT]')
                     sleep(.7)
@@ -348,8 +372,6 @@ def basement(inventory):
                 else:
                     if move == rooms[i][0]:
                         current_room = rooms[i]
-
-
     sleep(1.5)
-    return inventory
+    MainFloor.setting(inventory)
 

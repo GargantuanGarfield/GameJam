@@ -36,6 +36,7 @@ Now is not the time for jokes..\n\tWe found where the killer has been hiding out
     print()
     inventory = basement.basement(inventory)
     #MainFloor.system()
+    print("done")
 
 
 main()
