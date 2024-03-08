@@ -1,14 +1,14 @@
 # Nicholas Whitton
 # 3/7/2024
 # The main floor where you search for items.
-inventory = []
+
 selection = ['Basement', 'Upstairs', 'Cabinet', 'Kitchen', 'Check' ]
 cabinet_selection = ['[P]owder???', '[T]ape Recorder', '[W]hetstone']
 kitchen_selection = ['[ID] Body', '[R]iddle??', 'Egg']
 HasKey = False
 import time
 import random
-
+# import top_floor
 # import basement
 
 
@@ -20,8 +20,8 @@ You enter the building, try looking for evidence to solve this case.
 print(background.__doc__)
 passnum1 = random.randint(0,9)
 
-
-def setting():
+def setting(inventory):
+    inventory = []
     global HasKey
     option = input(f'Choose what you want to do {selection}: ').capitalize()
     while option not in selection:
@@ -29,6 +29,11 @@ def setting():
     while not HasKey:
         if option == 'Basement' and not HasKey:
             print('\n You dont have the Key for that')
+            passcode = input('What is the passcode? ')
+            if passcode == str(passnum1) + '298':
+                HasKey = True
+            else:
+                print('Wrong code.')
             option = input(f'Choose what you want to do {selection}: ').capitalize()
 
         elif option == 'Basement' and HasKey == True:
@@ -101,9 +106,7 @@ def setting():
         else:
             print('Not a valid option!')
             option = input(f'Choose what you want to do {selection}: ').capitalize()
-
-
-
+    return inventory
 
 
 

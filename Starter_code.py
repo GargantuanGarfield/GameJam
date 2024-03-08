@@ -9,6 +9,7 @@ from time import sleep
 import MainFloor
 
 def main():
+    inventory = []
     print(f"{Ascii_artr.TITLE_CARED}")
     player = input("Enter your last name: ")
     for line in Ascii_artr.CONNER.splitlines():
@@ -29,6 +30,6 @@ def main():
     for line in Ascii_artr.DOTS:
         print(line)
         sleep(.8)
-    MainFloor.setting()
+    MainFloor.setting(inventory)
 
 main()
