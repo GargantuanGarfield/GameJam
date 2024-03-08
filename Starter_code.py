@@ -4,7 +4,6 @@
 # Starter code
 from colorama import Fore, Style
 import Ascii_artr
-from os import system
 from time import sleep
 import MainFloor
 
@@ -26,7 +25,6 @@ def main():
         print("Try again")
         yes = input("Go now?]\n\t(y/n): ").lower().strip()
     print("Wonderful\n")
-    system("cls")
     for line in Ascii_artr.DOTS:
         print(line)
         sleep(.8)

@@ -4,13 +4,13 @@
 import basement
 import time
 import random
+import top_floor
+
 selection = ['Basement', 'Upstairs', 'Cabinet', 'Kitchen', 'Check' ]
 cabinet_selection = ['[P]owder???', '[T]ape Recorder', '[W]hetstone']
 kitchen_selection = ['[ID] Body', '[R]iddle??', 'Egg']
 HasKey = False
 
-
-# import top_floor
 
 
 def background():
@@ -58,9 +58,7 @@ def setting(inventory):
             basement.basement(inventory)
 
         elif option == 'Upstairs':
-            quit()
-            # option = input(f'Choose what you want to do {selection}: ').capitalize()
-            # pass  # will be top_floor.basement()
+            inventory += top_floor.main(inventory)
 
         elif option == 'Cabinet':
             look_for_stuff = input(f'Look in cabinet {cabinet_selection} (Q to leave): ').title()

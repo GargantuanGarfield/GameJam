@@ -4,7 +4,6 @@
 # Code for the Basement floor of the game
 # import MainFloor
 from time import sleep
-from os import system
 import Ascii_artr
 import MainFloor
 
@@ -108,7 +107,6 @@ def basement(inventory):
                 print("You found a battery!")
                 sleep(1.6)
                 print("You put it in your pocket")
-                system('cls')
                 inventory.append('Red AA Battery')
                 ITEMS[0].remove(item)
 
@@ -144,7 +142,6 @@ def basement(inventory):
                 print("\nYou decide to hold onto it.")
                 sleep(1.7)
                 print("You've acquired 'Strange Painting'")
-                system('cls')
                 inventory.append('Strange Painting')
                 ITEMS[0].remove(item)
 
@@ -344,7 +341,6 @@ def basement(inventory):
                         print(' - ' + thing)
 
         elif current_room == 'Inventory':
-            system('cls')
             print("You check your pockets")
             for thing in inventory:
                 if len(inventory) == 0:
