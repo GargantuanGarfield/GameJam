@@ -13,14 +13,6 @@ HasKey = False
 
 
 
-def background():
-    """You arrive at the crime scene...
-It is a run down house with broken glass and spots of blood everywhere.
-You enter the building, try looking for evidence to solve this case.
-"""
-
-
-print(background.__doc__)
 passnum1 = random.randint(0, 9)
 
 

@@ -26,8 +26,9 @@ def main():
         yes = input("Go now?]\n\t(y/n): ").lower().strip()
     print("Wonderful\n")
     for line in Ascii_artr.DOTS:
-        print(line)
+        print(line, end="")
         sleep(.8)
+    print()
     MainFloor.setting(inventory)
 
 main()
